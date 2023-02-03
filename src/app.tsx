@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import './app.css';
+import React from 'react';
+import './App.css';
 
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <h1>App is working</h1>
     </div>
   );
 }

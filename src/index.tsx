@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './app';
+import './Index.css';
+import App from './App';
+import Component from './components/component'
 
 
 const root = ReactDOM.createRoot(
@@ -11,5 +12,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <App/>
+    <Component/>
   </React.StrictMode>
 );
