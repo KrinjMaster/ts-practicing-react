@@ -1,39 +1,32 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useReducer, useRef } from 'react'
 
-interface Person {
-  name: string,
-	height: number,
-	mass: number,
-	hair_color: string,
-	skin_color: string,
-	eye_color: string,
-	birth_year: string,
-	gender: string,
-}
+export const Component: React.FC = () => {
 
-
-const Component: React.FC = () => {
-
-  async function getPerson(id = 4): Promise<Person> {
-    const response = await fetch(`https://swapi.dev/api/people/${id}`)
-    return response.json()
-  }
+  const [button, setButton] = useState(0)
   
-  const [person, setPerson] = useState<Person | null>(null)
-
   useEffect(() => {
-      getPerson().then(data => setPerson(data)).catch(err => alert(` Error >>> ${err}`))
-  }, [])
-  
+    console.log(`Button state is ${button}`)
+  }, [button])
+
+  const changeBtnTrue = () => {
+    return setButton(button => button + 1)
+  }
+
+  const changeBtnFalse = () => {
+    return setButton(button => button - 1)
+  }
+
+ 
 
   return (<>
     <div>
-      <h1>Person name: {person?.name}</h1>
-      <h1>Person height: {person?.height}</h1>
-      <h1>Person birth year: {person?.birth_year}</h1>
+      <h1>State: {button}</h1>
+      <button onClick={changeBtnTrue}>to True</button>
+      <button onClick={changeBtnFalse}>to False</button>
     </div>
   </>
   )
 }
 
 export default Component
+
