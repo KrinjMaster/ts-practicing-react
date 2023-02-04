@@ -11,12 +11,13 @@ interface Person {
 	gender: string,
 }
 
-async function getPerson(id = 1): Promise<Person> {
-  const response = await fetch(`https://swapi.dev/api/people/${id}`)
-  return response.json()
-}
 
 const Component: React.FC = () => {
+
+  async function getPerson(id = 4): Promise<Person> {
+    const response = await fetch(`https://swapi.dev/api/people/${id}`)
+    return response.json()
+  }
   
   const [person, setPerson] = useState<Person | null>(null)
 

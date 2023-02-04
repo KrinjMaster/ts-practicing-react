@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './Index.css';
 import App from './App';
-import Component from './components/component'
+import Component from './Components/Component'
 
 
 const root = ReactDOM.createRoot(
