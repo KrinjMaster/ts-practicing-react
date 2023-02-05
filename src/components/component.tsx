@@ -2,27 +2,17 @@ import React, { useState, useEffect, useReducer, useRef } from 'react'
 
 export const Component: React.FC = () => {
 
-  const [button, setButton] = useState(0)
-  
-  useEffect(() => {
-    console.log(`Button state is ${button}`)
-  }, [button])
+  const [count, setCount] = useState(0)
 
-  const changeBtnTrue = () => {
-    return setButton(button => button + 1)
+  const Increasement = () => {
+    return setCount(count => count + 1)
   }
 
-  const changeBtnFalse = () => {
-    return setButton(button => button - 1)
-  }
-
- 
 
   return (<>
     <div>
-      <h1>State: {button}</h1>
-      <button onClick={changeBtnTrue}>to True</button>
-      <button onClick={changeBtnFalse}>to False</button>
+      <h1>Clicked: {count}</h1>
+      <button onClick={Increasement}>Click</button>
     </div>
   </>
   )
