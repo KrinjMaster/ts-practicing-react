@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './Index.css';
 import App from './App';
-import Component from './Components/Component'
+import Input__counter from './Components/Input-counter'
+import Counter from './Components/Counter'
 
 
 const root = ReactDOM.createRoot(
@@ -12,6 +13,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <App/>
-    <Component/>
+    <Input__counter/>
   </React.StrictMode>
 );
