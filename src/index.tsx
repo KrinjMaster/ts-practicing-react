@@ -4,6 +4,7 @@ import './Index.css';
 import App from './App';
 import Input__counter from './Components/Input-counter'
 import Counter from './Components/Counter'
+import Render_Count from './Components/Render_Count'
 
 
 const root = ReactDOM.createRoot(
@@ -13,6 +14,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <App/>
-    <Input__counter/>
+    <Render_Count/>
   </React.StrictMode>
 );
