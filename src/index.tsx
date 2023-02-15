@@ -4,8 +4,7 @@ import './Index.css';
 import App from './App';
 import Input__counter from './Components/Input-counter'
 import Counter from './Components/Counter'
-import Render_Count from './Components/Products'
-
+import UseReducer from './Components/UseReducer';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

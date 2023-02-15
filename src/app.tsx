@@ -1,24 +1,27 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-import Products  from './Components/Products'
-import { products } from './Data/Products'
+import Product from './Components/Product';
 import axios from 'axios';
-import IProduct from './Models';
+import { IProduct } from './Module';
 
 const App: React.FC = () => {
+  const [products, setProducts] = useState<IProduct[]>([])
 
-  async function FetchProducts() {
-    const response = await axios.get<IProduct[]>('https://fakestoreapi.com/products?limit=5')
-    console.log(response)
+  async function getProducts() {
+    const response = await axios.get<IProduct[]>(`https://fakestoreapi.com/products/`)
+    setProducts(response.data)
   }
 
   useEffect(() => {
-    FetchProducts();
-  }, [])
-  
-  return (<>
-    { products.map(product => <Products product={product} key={product.id} />)}
-  </>);
+    getProducts()
+  },[])
+
+
+  return (
+    <div>
+      { products.map(product => <Product product={product} key={product.id}/>) }
+    </div>
+  )
 }
 
 export default App;
