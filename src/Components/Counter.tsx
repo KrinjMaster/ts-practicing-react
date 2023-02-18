@@ -1,20 +1,23 @@
 import React, { useState, useEffect, useReducer, useRef } from 'react'
 
-export const Counter: React.FC = () => {
-
+export const Counter = (): JSX.Element => {
   const [count, setCount] = useState(0)
 
-  const Increasement = () => {
-    return setCount(count => count + 1)
+  function changeValue(value: number) {
+    setCount(currentAmount => {
+      return currentAmount + value
+    })
+    setCount(currentAmount => {
+      return currentAmount + value
+    })
   }
 
-
-  return (<>
-    <div>
-      <h1>Clicked: {count}</h1>
-      <button onClick={Increasement}>Click</button>
+  return (
+    <div className='flex flex-row justify-center items-center'>
+      <button onClick={() => changeValue(1)} className='border rounded mr-3'>+</button>
+      <h1>Value: {count}</h1>
+      <button onClick={() => changeValue(-1)} className='border rounded ml-3'>-</button>
     </div>
-  </>
   )
 }
 

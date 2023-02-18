@@ -5,6 +5,7 @@ import App from './App';
 import Input__counter from './Components/Input-counter'
 import Counter from './Components/Counter'
 import UseReducer from './Components/UseReducer';
+import FormInput from './Components/FormInput';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,5 +13,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
+    <Counter/>
   </React.StrictMode>
 );
