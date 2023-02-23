@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
-
-const App: React.FC = () => {
+function App() {
   return (
-    <></>
+    <div className="App">
+     <h1 className="font-bold text-center">Hi</h1>
+    </div>
   )
 }
 
-export default App;
+export default App
