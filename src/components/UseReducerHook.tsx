@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react'
 
 enum EnumAction {
-  CHANGE = 'CHANGE',
+  CHANGE = 'CHANGE'
 }
 
 interface Action {
@@ -26,9 +26,9 @@ const UseReducerHook: React.FC = () => {
   const [state, dispatch] = useReducer(reducer, { count: 0, textState: false})
   
   return (
-    <div>
+    <div className='content-center font-bold'>
       <h1>{state.count}</h1>
-      <button onClick={() => dispatch({type: EnumAction.CHANGE})}>Increase</button>
+      <button className="border-2" onClick={() => dispatch({type: EnumAction.CHANGE})}>Increase</button>
       {state.textState && <h1>Some text</h1>}
     </div>
   )
